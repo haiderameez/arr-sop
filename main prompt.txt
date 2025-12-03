@@ -1,0 +1,404 @@
+i have attached statement of procedure
+
+this dataframe is called mis
+Contract	Months	Customer Name	Invoice Number	Nature of service	Start Date	End Date	Payment Cycle	Contract Amount	Invoiced amount for April	...	July in days	Days in Aug	Aug Sales in months	Aug Sales in days	Days in Sept	Sept Sales in months	Sept Sales in days	Days in Oct	Oct Sales in months	Oct Sales in days
+0	0	2025-04-01 00:00:00	Touchstone Partners	INV-25-26-000001	subscription based service	2025-04-01	2025-06-30	3 months subscription, upfront	70800.00	23600.0	...	NaN	0.0	0.000000	0.000000	NaN	NaN	NaN	NaN	NaN	NaN
+1	Closed- May 25	2025-04-01 00:00:00	Bimal Rajasekhar	INV-25-26-000002	subscription based service	2025-04-01	2025-05-31	2 months- Upfront	35400.00	17700.0	...	NaN	0.0	0.000000	0.000000	NaN	NaN	NaN	NaN	NaN	NaN
+2	0	2025-04-01 00:00:00	Veritas Legal Advocates and Solicitors	INV-25-26-000003	subscription based service	2025-04-02	2025-10-02	6 month-Upfront	1172448.00	195408.0	...	197532.000000	31.0	195408.000000	197532.000000	30	195408.000000	191160.000000	NaN	NaN	NaN
+3	0	Apr & May 25	LEGALOGIC CONSULTING LLP	INV-25-26-000004,104	subscription based service	2025-04-01	2025-05-31	2 months subscription, Monthly	70800.00	35400.0	...	NaN	0.0	0.000000	0.000000	NaN	NaN	NaN	NaN	NaN	NaN
+4	0	2025-04-01 00:00:00	VACUITAS COUNSELLOR LLP	INV-25-26-000005	subscription based service	2025-04-03	2026-04-02	Annual Upfront	116820.00	9735.0	...	9921.698630	31.0	9735.000000	9921.698630	30	9735.000000	9601.643836	NaN	NaN	NaN
+...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...
+404	NaN	Sept & oct 25	Rohit Sharma	INV-25-26-000476, CN-00036	NaN	2025-09-29	2026-10-28	13 month-Upfront	0.00	NaN	...	NaN	NaN	NaN	NaN	2	0.000000	0.000000	NaN	NaN	NaN
+405	NaN	2025-09-01 00:00:00	Sourish Roy	INV-25-26-000477	NaN	2025-10-01	2026-09-30	Annual Upfront	50000.00	NaN	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+406	NaN	2025-09-01 00:00:00	Acuity Law LLP	INV-25-26-000478	NaN	2025-09-29	2026-09-28	Annual subscription, Quarterly upfront	297360.00	NaN	...	NaN	NaN	NaN	NaN	2	24780.000000	1629.369863	NaN	NaN	NaN
+407	NaN	2025-09-01 00:00:00	Sarvottam Law Offices	INV-25-26-000480	NaN	2025-10-01	2026-09-30	Annual Upfront	130000.02	NaN	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+408	NaN	2025-09-01 00:00:00	Sarthak Advocates & Solicitors	INV-25-26-000469	NaN	2025-07-21	2026-07-20	Annual Upfront	4720.00	NaN	...	129.315068	31.0	393.333333	400.876712	30	393.333333	387.945205	NaN	NaN	NaN
+409 rows × 31 columns
+
+
+i have already merged the invoices from zoho with the master list, i have attached the merged dataframe as well
+
+merged data frame
+
+Invoice Number_x	Customer Name_x	S .No.	Customer Name_y	Invoice Number_y	Salesperson	Nature of service	Start Date	End Date	Payment Cycle	Contract Amount	Invoiced Amount	All Invoices
+0	INV-25-26-000481	Solaris Legal	205.0	Solaris Legal	INV-25-26-000226, 000481	Jayanth	subscription based service	2025-07-01 00:00:00	2026-06-30 00:00:00	Annual ,Quarterly	566400.0	283200.0	INV-25-26-000481
+1	INV-25-26-000482	MG Ramachandran	207.0	MG Ramachandran	INV-25-26-000228, 000482	Jayanth	subscription based service	2025-07-01 00:00:00	2026-06-30 00:00:00	Annual ,Quarterly	141600.0	70800.0	INV-25-26-000482
+2	INV-25-26-000483	Agama Law Associates	3.0	Agama Law Associates	INV-25-26- (46-jan),000013,000277, 000483	NaN	subscription based service	2025-01-01 00:00:00	2025-09-30 00:00:00	3 Quarter- Upfront	318644.0	318644.0	INV-25-26-000483
+3	INV-25-26-000484	B2C	209.0	Hamsaanandini Nanduri	INV-25-26-000278, 000484	Sankalp	subscription based service	2025-07-01 00:00:00	2026-07-15 00:00:00	Annual ,Quarterly	76464.0	25488.0	INV-25-26-000484
+4	INV-25-26-000485	Aanchal Basur	208.0	Aanchal Basur	INV-25-26-000234, 000485	Sankalp	subscription based service	2025-07-01 00:00:00	2026-06-30 00:00:00	Annual ,Quarterly	53808.0	26904.0	INV-25-26-000485
+...	...	...	...	...	...	...	...	...	...	...	...	...	...
+90	INV-25-26-000573	Solicitors India Law Offices	408.0	Solicitors India Law Offices	INV-25-26-000573	Jai Malaviya\n	One time work	2025-10-30 00:00:00	2025-11-29 00:00:00	1 month-Upfront	9440.0	9440.0	INV-25-26-000573
+91	INV-25-26-000574	Jani & Parikh, Advocates and Solicitors	409.0	Jani & Parikh, Advocates and Solicitors	INV-25-26-000574	Jai Malaviya\n	One time work	2025-10-30 00:00:00	2025-11-29 00:00:00	1 month-Upfront	21240.0	21240.0	INV-25-26-000574
+92	INV-25-26-000575	Siddhant Makkar	410.0	Siddhant Makkar	INV-25-26-000575	Harshita Agarwal	One time work	2025-10-31 00:00:00	2025-11-30 00:00:00	1 month-Upfront	5000.0	5000.0	INV-25-26-000575
+93	INV-25-26-000576	Astik Vaid	411.0	Astik Vaid	INV-25-26-000576\n	Pracheta	One time work	2025-10-31 00:00:00	2025-11-30 00:00:00	1 month-Upfront	8000.0	8000.0	INV-25-26-000576
+94	INV-25-26-000577	Anand and Anand	412.0	Anand and Anand	INV-25-26-000577\n	jayanth	subscription based service	2025-11-01 00:00:00	2026-01-31 00:00:00	3 months- Upfront	44250.0	44250.0	INV-25-26-000577
+95 rows × 13 columns
+
+few important notes,
+1. in the Months table there are 4 types of ways the month is stored,
+first is 2025-04-01 00:00:00 (in the excel file it shows like Apr-2025)
+second is Apr & May 25 in this the invoice is here is generated for the month of april and may (if Aug & Nov 2025 is given the it means taht the invoice is generated for the months of Aug and Nov) there may be multiple & used as well
+third is Apr to May 25 in this the invoice is here is generated for every month from april to may (if Aug to Nov 2025 is given the it means taht the invoice is generated for every month in between of Aug and Nov)
+last way is Feb 25, May, Aug 25, Oct 25 here for all the months given, the invoice will be generated (it works like how and works only)
+
+2. the merged table contains only the new invoices for october
+
+3. we need to fill the last 3 columns of the october month
+
+4. the SOP contains how to fill the october months 
+
+5. invoice needs to be calculated for the october month to do this we will decide using seeing which rows are needing invoices using the point 1 (if october is there -> it needs to be calculated)
+
+6. the rows which are needed to have their invoice calculated, we will take their compay name and then we will use the merged dataframe comapany name_y and compare them, if the name matches, the invoice number_y is taken from the merged table and then it is added to the invoice number in mis, after this the october is month data (sales) are calculated
+
+7. If the company name is not present in the mis table, then it is a new company, all the data from the merged table should be imported into mis in a row, for customer name and invoice number, the cusotmer name_y and invoice number_y columns of the merged table should be used, the columns that need to be added for a new company are - Months (here it should be 2025-10-01 as the month is october), Customer Name, Invoice Number, Nature of Service, Start Date, End Date, Payment Cycle and Contract amount (all this is already in there in merged table)
+
+
+After doing the operation, the data should be stored in the mis dataframe only
+
+
+
+
+
+working code
+import pandas as pd
+import numpy as np
+import re
+from datetime import datetime, timedelta
+from openpyxl import load_workbook
+
+# Configuration
+path = 'MIS_Coresphere100 Apr 25 to Oct 25.xlsx'
+sheet = 'FY 25-26-Accrual'
+
+# Read the MIS data
+mis = pd.read_excel(path, sheet_name=sheet, skiprows=2)
+
+# Normalize Invoice column name
+if 'Invoice' in mis.columns and 'Invoice Number' not in mis.columns:
+    mis = mis.rename(columns={"Invoice": "Invoice Number"})
+
+# Helper to get column names (handles whitespace)
+cols = {c.strip(): c for c in mis.columns}
+def col(name):
+    return cols.get(name, name)
+
+# Identify key columns
+if 'Invoice Number' in mis.columns:
+    invoice_col = 'Invoice Number'
+elif 'Invoice' in mis.columns:
+    invoice_col = 'Invoice'
+else:
+    invoice_col = mis.columns[3]
+
+if 'Start Date' in cols:
+    start_col = cols['Start Date']
+else:
+    start_col = [c for c in mis.columns if 'Start Date' in c][0]
+
+if 'End Date' in cols:
+    end_col = cols['End Date']
+else:
+    end_col = [c for c in mis.columns if 'End Date' in c][0]
+
+# Rename columns for consistency
+mis = mis.rename(columns={
+    start_col: 'Start Date',
+    end_col: 'End Date',
+    invoice_col: 'Invoice Number'
+})
+
+# Normalize customer names for matching
+def normalize_name(s):
+    if pd.isna(s):
+        return ""
+    s = str(s).strip()
+    s = re.sub(r"[^\w\s]", "", s)
+    s = re.sub(r"\s+", " ", s)
+    return s.lower()
+
+# Parse month and year from text tokens
+def parse_token_month_year(token):
+    token = token.strip().lower().replace('.', '')
+    m = re.search(r'([a-z]+)', token)
+    y = re.search(r'(\d{2,4})', token)
+    mm = None
+    yy = None
+    if m:
+        key = m.group(1)[:3]
+        mm = {'jan':1,'feb':2,'mar':3,'apr':4,'may':5,'jun':6,
+              'jul':7,'aug':8,'sep':9,'oct':10,'nov':11,'dec':12}.get(key)
+    if y:
+        val = y.group(1)
+        yy = 2000 + int(val) if len(val) == 2 else int(val)
+    return mm, yy
+
+# Extract list of months from a field (handles various formats)
+def months_list_from_field(v):
+    if pd.isna(v):
+        return []
+    if isinstance(v, (pd.Timestamp, datetime)):
+        return [v.month]
+    
+    s = str(v).strip().lower()
+    
+    # Handle "month to month" format
+    if 'to' in s:
+        a, b = s.split('to')
+        sm, sy = parse_token_month_year(a)
+        em, ey = parse_token_month_year(b)
+        if not sy:
+            sy = 2025
+        if not ey:
+            ey = sy
+        start = datetime(sy, sm, 1)
+        end = datetime(ey, em, 28) + timedelta(days=4)
+        end = end.replace(day=1) - timedelta(days=1)
+        cur = start
+        out = []
+        while cur <= end:
+            out.append(cur.month)
+            ny = cur.year
+            nm = cur.month + 1
+            if nm == 13:
+                nm = 1
+                ny += 1
+            cur = cur.replace(year=ny, month=nm, day=1)
+        return out
+    
+    # Handle comma/ampersand separated months
+    if '&' in s or ',' in s:
+        tokens = re.split(r'[,&]', s)
+        out = []
+        for t in tokens:
+            mm, yy = parse_token_month_year(t)
+            if mm:
+                out.append(mm)
+        return sorted(set(out))
+    
+    # Handle multiple month names
+    m = re.findall(r'[A-Za-z]+', s)
+    out = []
+    for t in m:
+        mm = {'jan':1,'feb':2,'mar':3,'apr':4,'may':5,'jun':6,
+              'jul':7,'aug':8,'sep':9,'oct':10,'nov':11,'dec':12}.get(t[:3])
+        if mm:
+            out.append(mm)
+    return sorted(set(out))
+
+# Calculate overlapping days between two date ranges
+def overlap_days(start, end, period_start, period_end):
+    s = max(start, period_start)
+    e = min(end, period_end)
+    if e < s:
+        return 0
+    return (e - s).days + 1
+
+# Prepare merged data mapping
+merged['cn_norm'] = merged['Customer Name_y'].apply(normalize_name)
+merged_map = {}
+for _, r in merged.iterrows():
+    merged_map.setdefault(r['cn_norm'], []).append(r)
+
+# October 2025 date range
+oct_s = datetime(2025, 10, 1)
+oct_e = datetime(2025, 10, 31)
+
+# Add normalized customer name column
+mis['cn_norm'] = mis['Customer Name'].apply(normalize_name)
+
+# First pass: Calculate contract period for all rows
+for idx, row in mis.iterrows():
+    start = pd.to_datetime(row.get('Start Date'), errors='coerce')
+    end = pd.to_datetime(row.get('End Date'), errors='coerce')
+    if pd.notna(start) and pd.notna(end):
+        contract_period_days = (end - start).days + 1
+        mis.at[idx, 'Contract period'] = contract_period_days
+
+# Second pass: Update existing rows with October calculations
+for idx, row in mis.iterrows():
+    cname = row.get('Customer Name')
+    norm = row.get('cn_norm', '')
+    start = pd.to_datetime(row.get('Start Date'), errors='coerce')
+    end = pd.to_datetime(row.get('End Date'), errors='coerce')
+    months_present = months_list_from_field(row.get('Months'))
+    
+    # Check if this row is applicable to October
+    overlap = pd.notna(start) and pd.notna(end) and not (end < oct_s or start > oct_e)
+    applicable = (10 in months_present) or overlap
+    
+    if applicable:
+        # Update from merged data if available
+        if norm in merged_map:
+            mrow = merged_map[norm][-1]
+            
+            # Update invoice number
+            inv_new = mrow.get('Invoice Number_y') or mrow.get('Invoice') or mrow.get('Invoice Number')
+            inv_old = row.get('Invoice Number')
+            
+            if pd.isna(inv_old) or str(inv_old).strip() == "":
+                mis.at[idx, 'Invoice Number'] = inv_new
+            else:
+                vals = [x.strip() for x in re.split(r'[;,]', str(inv_old)) if x.strip()]
+                for p in re.split(r'[;,]', str(inv_new)):
+                    p = p.strip()
+                    if p and p not in vals:
+                        vals.append(p)
+                mis.at[idx, 'Invoice Number'] = ", ".join(vals)
+            
+            # Update dates if missing
+            if pd.isna(start):
+                start = pd.to_datetime(mrow.get('Start Date'), errors='coerce')
+                mis.at[idx, 'Start Date'] = start
+            if pd.isna(end):
+                end = pd.to_datetime(mrow.get('End Date'), errors='coerce')
+                mis.at[idx, 'End Date'] = end
+        
+        # Calculate October sales
+        if pd.notna(start) and pd.notna(end):
+            contract_period_days = (end - start).days + 1
+            mis.at[idx, 'Contract period'] = contract_period_days
+            
+            d_oct = overlap_days(start, end, oct_s, oct_e)
+            amt = row.get('Contract Amount') if pd.notna(row.get('Contract Amount')) else 0
+            
+            # Days-based calculation
+            sales_days = (amt / contract_period_days) * d_oct if contract_period_days > 0 else 0
+            
+            # Months-based calculation
+            months_diff = (end.year - start.year) * 12 + (end.month - start.month)
+            if end.day >= start.day:
+                mc = max(1, months_diff + 1)
+            else:
+                mc = max(1, months_diff)
+            monthwise = amt / mc if mc > 0 else 0
+            
+            # Check if contract closes in October
+            closing = (end.year == 2025 and end.month == 10)
+            
+            # Set sales values - always calculate monthly sales if there's overlap
+            if 10 in months_present:
+                sales_months = 0 if closing else monthwise
+            elif overlap:
+                sales_months = monthwise
+            else:
+                sales_months = np.nan
+            
+            mis.at[idx, 'Days in Oct'] = d_oct
+            mis.at[idx, 'Oct Sales in days'] = sales_days
+            if pd.notna(sales_months):
+                mis.at[idx, 'Oct Sales in months'] = sales_months
+
+# Add new rows from merged data
+existing = set(mis['cn_norm'].fillna(''))
+to_add = []
+
+for _, r in merged.iterrows():
+    nm = r['cn_norm']
+    if nm in existing or nm == "":
+        continue
+    
+    s = pd.to_datetime(r.get('Start Date'), errors='coerce')
+    e = pd.to_datetime(r.get('End Date'), errors='coerce')
+    overlap = pd.notna(s) and pd.notna(e) and not (e < oct_s or s > oct_e)
+    
+    if not overlap:
+        continue
+    
+    # Create new row - use Series to preserve data types
+    new = pd.Series(index=mis.columns, dtype=object)
+    
+    new['Months'] = 'Oct-25'
+    new['Customer Name'] = r['Customer Name_y']
+    new['cn_norm'] = nm
+    new['Invoice Number'] = r.get('Invoice Number_y', r.get('Invoice Number'))
+    new['Nature of service'] = r.get('Nature of service')
+    new['Start Date'] = r.get('Start Date')
+    new['End Date'] = r.get('End Date')
+    new['Payment Cycle'] = r['Payment Cycle']  # Direct assignment
+    new['Contract Amount'] = r.get('Contract Amount')
+    
+    # Calculate October sales for new row
+    if pd.notna(s) and pd.notna(e):
+        contract_period_days = (e - s).days + 1
+        new['Contract period'] = contract_period_days
+        
+        d_oct = overlap_days(s, e, oct_s, oct_e)
+        amt = new.get('Contract Amount') if pd.notna(new.get('Contract Amount')) else 0
+        sales_days = (amt / contract_period_days) * d_oct if contract_period_days > 0 else 0
+        
+        months_diff = (e.year - s.year) * 12 + (e.month - s.month)
+        if e.day >= s.day:
+            mc = max(1, months_diff + 1)
+        else:
+            mc = max(1, months_diff)
+        monthwise = amt / mc if mc > 0 else 0
+        
+        new['Days in Oct'] = d_oct
+        new['Oct Sales in days'] = sales_days
+        new['Oct Sales in months'] = monthwise
+    
+    to_add.append(new.to_dict())
+
+# Add new rows to dataframe
+if to_add:
+    new_df = pd.DataFrame(to_add)
+    # Ensure columns are in same order as mis
+    new_df = new_df[mis.columns]
+    mis = pd.concat([mis, new_df], ignore_index=True)
+
+# Round numeric columns
+def safe_round(x):
+    if pd.isna(x) or x == '':
+        return x
+    try:
+        return round(float(x), 3)
+    except (ValueError, TypeError):
+        return x
+
+amount_columns = [
+    'Contract Amount', 'Oct Sales in days', 'Oct Sales in months',
+    'Invoiced amount for April', 'Invoiced amount for MAY',
+    'April Sales (Days Wise)', 'May Sales (Days Wise)',
+    'June in months', 'Days in June', 'June in days',
+    'July in months', 'Days in July', 'July in days',
+    'Days in Aug', 'Aug Sales in months', 'Aug Sales in days',
+    'Days in Sept', 'Sept Sales in months', 'Sept Sales in days'
+]
+
+for c in amount_columns:
+    if c in mis.columns:
+        mis[c] = mis[c].apply(safe_round)
+
+# Clean up temporary columns
+columns_to_remove = ['cn_norm']
+mis = mis.loc[:, ~mis.columns.duplicated()]
+for c in columns_to_remove:
+    if c in mis.columns:
+        mis = mis.drop(columns=[c])
+
+# Write back to Excel using openpyxl
+wb = load_workbook(path)
+ws = wb[sheet]
+
+# Header is at row 3 (skiprows=2 means rows 1-2 are skipped)
+header_row_excel = 3
+
+# Clear existing data (keep headers)
+max_row = ws.max_row
+for row in range(header_row_excel + 1, max_row + 1):
+    for col in range(1, ws.max_column + 1):
+        ws.cell(row=row, column=col).value = None
+
+# Write data
+for r in range(mis.shape[0]):
+    excel_row = header_row_excel + 1 + r
+    for c_idx, col in enumerate(mis.columns, start=1):
+        ws.cell(row=excel_row, column=c_idx).value = mis.iloc[r][col]
+
+# Save workbook
+wb.save(path)
+
+print(f"Successfully updated {path}")
+print(f"Total rows: {len(mis)}")
+print(f"New rows added: {len(to_add)}")
